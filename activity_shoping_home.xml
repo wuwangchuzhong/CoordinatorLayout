@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <!--android:descendantFocusability="beforeDescendants"-->
+    <!--android:focusableInTouchMode="true"-->
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@android:color/white" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/layout_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:fitsSystemWindows="false">
+
+            <LinearLayout
+                android:id="@+id/linear_title"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@color/white"
+                android:fitsSystemWindows="false"
+                android:gravity="center_vertical"
+                android:minHeight="?attr/actionBarSize"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll|enterAlways">
+                <!--同步拍搜所栏-->
+                <LinearLayout
+                    android:id="@+id/ll_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.yidian.buyer.view.CircleImageView
+                        android:id="@+id/circleImageView"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/login_title"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_background"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.yidian.buyer.view.PingFangTextView
+                            android:id="@+id/shop_search"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_background"
+                            android:drawableLeft="@drawable/big2"
+                            android:drawablePadding="10dp"
+                            android:gravity="center_vertical"
+                            android:lines="1"
+                            android:paddingLeft="10dp"
+                            android:singleLine="true"
+                            android:text="搜索复制品、大师"
+                            android:textColor="#9C9A9C"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <!--拍场消息-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/yidian_pmop"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/icon_shopping_car" />
+
+                        <com.yidian.buyer.view.PingFangTextView
+                            android:id="@+id/mssage_redp"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignEnd="@+id/yidian_pmop"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:background="@drawable/messagebase"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="6sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                    <!--消息-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/yidian_message"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:src="@drawable/messageing" />
+
+                        <com.yidian.buyer.view.PingFangTextView
+                            android:id="@+id/mssage_red"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignEnd="@+id/yidian_message"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/messagebase"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="6sp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <!--搜索框下面空白格-->
+                <!--下划线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d3d3d3"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tabLy_shopping"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                android:fillViewport="false"
+                app:tl_indicator_color="@color/selColor"
+                app:tl_indicator_height="2dp"
+                app:tl_indicator_width_equal_title="true"
+                app:tl_tab_padding="22dp"
+                app:tl_tab_space_equal="true"
+                app:tl_textSelectColor="@color/selColor"
+                app:tl_textUnselectColor="@color/textcolor"
+                app:tl_textsize="15sp"
+                app:tl_underline_color="@color/white"
+                app:tl_underline_height="1dp" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_shopping"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <com.yidian.buyer.view.Layout_networkcollapse
+            android:id="@+id/ly_newwork"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="120dp"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="4dp"-->
+        <!--android:background="@drawable/jainbainxian" />-->
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
